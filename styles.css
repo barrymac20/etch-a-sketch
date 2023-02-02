@@ -37,8 +37,7 @@ button {
 }
 
 .grid {
-  background-color: grey;
-  border: gray 5px solid;
+  box-shadow: 0px 0px 10px 5px #888888;
   width: 600px;
   height: 600px;
   margin: 20px auto;
@@ -49,5 +48,4 @@ button {
 .grid-square {
   background: white;
   color: #f5f5f5;
-  border: black   0.1px solid;
 }

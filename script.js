@@ -1,12 +1,20 @@
-//get various elements into variables
+//get various DOM elements into variables
 const grid = document.querySelector('.grid');
 const input = document.querySelector('input');
 const setGridSize = document.getElementById('set-grid-size');
-const resetGridBtn = document.getElementById('reset-grid-btn');
+const resetGrid = document.getElementById('reset-grid');
+// const gridSquare = document.getElementsByClassName('grid-square');
+
+// console.log(gridSquare);
 
 //Add event listeners to buttons
-setGridSize.addEventListener('click', changeSize);
-resetGridBtn.addEventListener('click', resetGrid);
+setGridSize.addEventListener('click', changeGridSize);
+resetGrid.addEventListener('click', resetGridSize);
+//Mouse over event listener for grid that change colour of each element
+grid.addEventListener('mouseover', function(e){
+  e.target.style.background = 'red';
+  console.log(e.screenX)
+})
 
 //Function to create initial 16x16 grid by adding divs to DOM
 function createGrid(size){
@@ -14,11 +22,11 @@ function createGrid(size){
     const column = document.createElement('div'); // create column
     column.className = 'grid-square';
     grid.appendChild(column); // append column inside grid
-  }
+  };
 }
 
 //Function to change the size of the grid based on input value
-function changeSize() {
+function changeGridSize() {
   clearGrid();
   createGrid(input.value);
   grid.style.gridTemplateColumns = `repeat(${input.value}, 1fr)`;
@@ -33,7 +41,7 @@ function clearGrid() {
 }
 
 //Function to reset grid back to original 16x16
-function resetGrid() {
+function resetGridSize() {
   clearGrid();
   input.value = '';
   grid.style.gridTemplateColumns = 'repeat(16, 1fr)';
