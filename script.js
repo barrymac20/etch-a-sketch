@@ -3,7 +3,10 @@ const grid = document.querySelector('.grid');
 const input = document.querySelector('input');
 const setGridSize = document.getElementById('set-grid-size');
 const resetGrid = document.getElementById('reset-grid');
+const colorButton = document.getElementById('color-buttons')
 // const gridSquare = document.getElementsByClassName('grid-square');
+
+// console.log(color)
 
 // console.log(gridSquare);
 
@@ -12,9 +15,15 @@ setGridSize.addEventListener('click', changeGridSize);
 resetGrid.addEventListener('click', resetGridSize);
 //Mouse over event listener for grid that change colour of each element
 grid.addEventListener('mouseover', function(e){
-  e.target.style.background = 'red';
-  console.log(e.screenX)
-})
+  e.target.style.background = 'black';
+});
+
+// colorButton.addEventListener('click', (e) => {
+//   if(e.target.classList.contains('color-button')) {
+//     e.target.style.background = 'red'
+//   }
+// });
+
 
 //Function to create initial 16x16 grid by adding divs to DOM
 function createGrid(size){

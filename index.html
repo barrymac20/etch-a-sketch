@@ -12,15 +12,28 @@
     <h1>ETCH - A - SKETCH</h1>
   </header>
 
-  <div class="input">
-    <div>Enter number between 1 and 100</div>
-    <input type="text">
-    <button id="set-grid-size">Set Grid Size</button>
-    <button id="reset-grid">Reset Grid</button>
+  
+  <div class="main">
+
+    <div class="sidebar">
+      <h3>Controls</h3>
+      <div class="grid-input">
+        <div>Grid Size: 1 - 100</div>
+        <input type="text">
+      </div>
+      <button id="set-grid-size">Set Grid Size</button>
+      <button id="reset-grid">Reset Grid</button>
+      <div id="color-buttons">
+        <button id="black" class="color-button black">Black</button>
+        <button id="red" class="color-button red">Red</button>
+        <button id="blue" class="color-button blue">Blue</button>
+        <button id="green" class="color-button green">Green</button>
+      </div>
+    </div>
+
+    <div class="grid"></div>
+  
   </div>
-
-  <div class="grid"></div>
-
   <script src="script.js"></script>
 </body>
 </html>
