@@ -3,27 +3,26 @@ const grid = document.querySelector('.grid');
 const input = document.querySelector('input');
 const setGridSize = document.getElementById('set-grid-size');
 const resetGrid = document.getElementById('reset-grid');
-const colorButton = document.getElementById('color-buttons')
-// const gridSquare = document.getElementsByClassName('grid-square');
+const colorButton = document.querySelectorAll('.color-button');
 
-// console.log(color)
-
-// console.log(gridSquare);
+//sets initial sketch color
+let sketchColor = 'black'
 
 //Add event listeners to buttons
 setGridSize.addEventListener('click', changeGridSize);
 resetGrid.addEventListener('click', resetGridSize);
+
 //Mouse over event listener for grid that change colour of each element
 grid.addEventListener('mouseover', function(e){
-  e.target.style.background = 'black';
+  if (e.buttons === 1) {
+  e.target.style.background = sketchColor;
+  }
 });
 
-// colorButton.addEventListener('click', (e) => {
-//   if(e.target.classList.contains('color-button')) {
-//     e.target.style.background = 'red'
-//   }
-// });
-
+//event listener for color buttons
+for (let i=0; i<colorButton.length; i++) {
+  colorButton[i].addEventListener('click', (e) => sketchColor = e.target.textContent)
+};
 
 //Function to create initial 16x16 grid by adding divs to DOM
 function createGrid(size){
@@ -49,8 +48,9 @@ function clearGrid() {
   });
 }
 
-//Function to reset grid back to original 16x16
+//Function to reset grid back to original 16x16 with black sketch color
 function resetGridSize() {
+  sketchColor = 'black'
   clearGrid();
   input.value = '';
   grid.style.gridTemplateColumns = 'repeat(16, 1fr)';
