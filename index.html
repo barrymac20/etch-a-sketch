@@ -8,33 +8,44 @@
   <title>Etch-A-Sketch</title>
 </head>
 <body>
+
   <header>
     <h1>ETCH - A - SKETCH</h1>
   </header>
 
-  
   <div class="main">
-
+    
     <div class="sidebar">
-      <h3>Controls</h3>
-      <div class="grid-input">
-        <div>Grid Size: 1 - 100</div>
-        <input type="text">
+
+      <div class="sidebar-grid">
+        <h3>Grid Controls</h3>          
+        <div class="grid-input">
+          <div>Grid Size: 1 - 100</div>
+          <input type="number">
+        </div>
+        <div class="grid-input-buttons">
+          <button id="set-grid-size">Set Grid Size</button>
+          <button id="reset-grid">Reset Grid</button>
+        </div>
       </div>
-      <button id="set-grid-size">Set Grid Size</button>
-      <button id="reset-grid">Reset Grid</button>
-      <div id="color-buttons">
-        <button class="color-button black">Black</button>
-        <button class="color-button red">Red</button>
-        <button class="color-button blue">Blue</button>
-        <button class="color-button green">Green</button>
-        <button class="color-button white">White</button>
-      </div>
+      
+      <div class="sidebar-sketch">
+        <h3>Sketch Color Controls</h3>
+        <div id="buttons">
+          <button class="color-button black">Black</button>
+          <button class="color-button red">Red</button>
+          <button class="color-button yellow">Yellow</button>
+          <button class="color-button blue">Blue</button>
+          <button class="color-button white">White</button>
+        </div>
+      </div>  
     </div>
 
     <div class="grid"></div>
   
   </div>
+
   <script src="script.js"></script>
+  
 </body>
 </html>

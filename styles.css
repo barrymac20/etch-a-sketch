@@ -6,6 +6,11 @@
   padding: 0;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  display: none;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   color: #333;
@@ -16,7 +21,7 @@ body {
 }
 
 header {
-  margin: 20px;
+  margin-top: 30px;
 }
 
 .main {
@@ -28,22 +33,35 @@ header {
   background-color: lightgray;
   box-shadow: 0px 0px 10px 5px #888888;
   height: 600px;
-  width: 200px;
+  width: 220px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 50px;
-  padding: 20px;
+  margin: 30px;
+  margin-right: 40px;
+  padding: 10px;
 }
 
 h3 {
   margin-bottom: 10px;
 }
 
+.sidebar-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 5px;
+}
+
 .grid-input {
   display: flex;
   align-items: center;
-  font-size: 14px;
+}
+
+.grid-input-buttons {
+  display: flex;
+  flex-direction: column;
 }
 
 input {
@@ -51,6 +69,17 @@ input {
   padding: 3px;;
   width: 40px;
   text-align: center;
+}
+
+.sidebar-sketch {
+  display: flex;
+  flex-direction: column;
+}
+
+#buttons {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 button {
@@ -71,12 +100,13 @@ button {
   background-color: red;
 }
 
-.blue {
-  background-color: blue;
+.yellow {
+  background-color: yellow;
+  color: black;
 }
 
-.green {
-  background-color: green;
+.blue {
+  background-color: blue;
 }
 
 .white {
@@ -88,7 +118,6 @@ button {
   box-shadow: 0px 0px 10px 5px #888888;
   width: 600px;
   height: 600px;
-  /* margin: 20px auto; */
   display: grid;
   grid-template-columns: repeat(16, 1fr);
 }
