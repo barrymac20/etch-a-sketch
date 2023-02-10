@@ -125,4 +125,5 @@ button {
 .grid-square {
   background: white;
   color: #f5f5f5;
+  /* border: 0.5px rgb(254, 254, 254) solid; */
 }

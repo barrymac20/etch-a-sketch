@@ -12,10 +12,11 @@ let sketchColor = 'black'
 setGridSize.addEventListener('click', changeGridSize);
 resetGrid.addEventListener('click', resetGridSize);
 
-//Mouse over event listener for grid that change colour of each element
-grid.addEventListener('mouseover', function(e){
+//Mousemove event listener to color items when mouse is in "click" position
+grid.addEventListener('mousemove', function(e){
   if (e.buttons === 1) {
-  e.target.style.background = sketchColor;
+    e.preventDefault();
+    e.target.style.background = sketchColor;
   }
 });
 
